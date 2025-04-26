@@ -1,88 +1,114 @@
 <!doctype html>
-<html lang="en">
+<html lang="az">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
 <!--Başlıq-->
-<h1>Profile</h1>
+<h1>Profil</h1>
 <hr>
 <header>
-    <h1>Quliyev Orxan</h1>
-    <h3>student at</h3>
-    <a href="https://aztu.edu.az/az" target="_blank" rel="noopener">
-        <img src="https://sso.aztu.edu.az/Content/Login/images/aztu_logo_az.png" alt="AzTU Loqo" width="200" height="100">
-    </a>
+  <h1>Quliyev Orxan</h1>
+  <h3>student at</h3>
+  <a href="https://aztu.edu.az/az" target="_blank" rel="noopener">
+    <img src="https://sso.aztu.edu.az/Content/Login/images/aztu_logo_az.png" alt="AzTU Loqo" width="200" height="100">
+  </a>
 </header>
 
-<!--Əsas məlumatlar-->
-<h2>About</h2>
+<!-- Əsas məlumatlar -->
+<h2 onclick="toggleSection('aboutSection')">Haqqımda (Klikləyin)</h2>
 <hr>
-<ul>
+<div id="aboutSection" class="hidden">
+  <ul id="aboutList">
     <li><b>Ad:</b> Orxan</li>
     <li><b>Soyad:</b> Quliyev</li>
     <li><b>Yaş:</b> 18</li>
     <li><b>İxtisas:</b> İnformasiya təhlükəsizliyi</li>
     <li><b>Universitet:</b> <a href="https://aztu.edu.az/az" target="_blank" rel="noopener">AzTU</a></li>
-</ul>
+  </ul>
+
+  <!-- Yeni məlumat əlavə etmək üçün input sahəsi -->
+  <input type="text" id="aboutInput" placeholder="Yeni məlumat əlavə et">
+  <button onclick="addAbout()">Əlavə et</button>
+</div>
 
 <blockquote>
-    <p>
-        Mən, Azərbaycan Texniki Universitetində (AzTU) İnformasiya Təhlükəsizliyi ixtisası üzrə təhsil alıram. 
-        <strong>Kibertəhlükəsizlik</strong> sahəsinə dərin marağım var və bu istiqamətdə daimi şəkildə biliklərimi artırmağa çalışıram. 
-        Praktiki olaraq əsasən <em>Kali Linux və Windows</em> mühitlərində işləyirəm, müxtəlif testlər və analizlər aparıram. 
-        Proqramlaşdırma sahəsində <i>C++ və Python</i> dilləri üzrə əsas biliklərə malikəm və təhlükəsizlik skriptlərinin yazılması, avtomatlaşdırma və analiz işlərində istifadə edirəm. 
-        <strong>TryHackMe</strong> platformasında müxtəlif otaqlarda tapşırıqlar üzərində işləyirəm və oradakı təcrübələrimi daim inkişaf etdirirəm. 
-        Əlavə olaraq, kibertəhlükəsizlik alətləri ilə geniş təcrübəm var: <u>Metasploit, Nmap, Burp Suite, Wireshark, John the Ripper, Hydra</u> və digərləri. 
-        Sistem təhlükəsizlik zəifliklərinin aşkarlanması, analiz olunması və istismarı üzrə praktiki bacarıqlara malikəm.
-    </p>
+  <p>
+    Mən, Azərbaycan Texniki Universitetində (AzTU) İnformasiya Təhlükəsizliyi ixtisası üzrə təhsil alıram.
+    <strong>Kibertəhlükəsizlik</strong> sahəsinə dərin marağım var və bu istiqamətdə daimi şəkildə biliklərimi artırmağa çalışıram.
+    Praktiki olaraq əsasən <em>Kali Linux və Windows</em> mühitlərində işləyirəm, müxtəlif testlər və analizlər aparıram.
+    Proqramlaşdırma sahəsində <i>C++ və Python</i> dilləri üzrə əsas biliklərə malikəm.
+    <strong>TryHackMe</strong> platformasında tapşırıqlar üzərində çalışıram və kibertəhlükəsizlik alətləri ilə təcrübəm var.
+  </p>
 </blockquote>
 
-<h3>İxtisas üzrə biliklər</h3>
+<h3 onclick="toggleSection('skillsSection')">İxtisas üzrə biliklər (Klikləyin)</h3>
 <hr>
-<table>
+<div id="skillsSection" class="hidden">
+  <table id="skillsTable">
     <thead>
-        <tr>
-            <th>Kateqoriya</th>
-            <th>Təsvir</th>
-        </tr>
+      <tr>
+        <th>Kateqoriya</th>
+        <th>Təsvir</th>
+        <th>Sil</th>
+      </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Əməliyyat Sistemləri</td>
-            <td>Kali GNU/Linux, Windows</td>
-        </tr>
-        <tr>
-            <td>Proqramlaşdırma</td>
-            <td>Python, C++ (əsas səviyyə)</td>
-        </tr>
-        <tr>
-            <td>Alətlər</td>
-            <td>Nmap, Metasploit, Burp Suite, Wireshark, John the Ripper, Hydra və s.</td>
-        </tr>
-        <tr>
-            <td>Təcrübə Platformaları</td>
-            <td>TryHackMe</td>
-        </tr>
-        <tr>
-            <td>Maraq Sahələri</td>
-            <td>Sistem zəifliklərinin istismarı, sosial mühəndislik, şəbəkə təhlükəsizliyi</td>
-        </tr>
+      <tr>
+        <td>Əməliyyat Sistemləri</td>
+        <td>Kali GNU/Linux, Windows</td>
+        <td><button onclick="deleteRow(this)">Sil</button></td>
+      </tr>
+      <tr>
+        <td>Proqramlaşdırma</td>
+        <td>Python, C++ (əsas səviyyə)</td>
+        <td><button onclick="deleteRow(this)">Sil</button></td>
+      </tr>
+      <tr>
+        <td>Alətlər</td>
+        <td>Nmap, Metasploit, Burp Suite, Wireshark və s.</td>
+        <td><button onclick="deleteRow(this)">Sil</button></td>
+      </tr>
+      <tr>
+        <td>Təcrübə Platformaları</td>
+        <td>TryHackMe</td>
+        <td><button onclick="deleteRow(this)">Sil</button></td>
+      </tr>
+      <tr>
+        <td>Maraq Sahələri</td>
+        <td>Sistem zəiflikləri, sosial mühəndislik</td>
+        <td><button onclick="deleteRow(this)">Sil</button></td>
+      </tr>
     </tbody>
-</table>
+  </table>
 
-<!--İstinadlar-->
+  <!-- Yeni bilik əlavə etmək üçün input sahələri -->
+  <input type="text" id="skillsCategory" placeholder="Kateqoriya">
+  <input type="text" id="skillsDescription" placeholder="Təsvir">
+  <button onclick="addSkill()">Əlavə et</button>
+</div>
+
 <footer>
-  <h3>Əlaqə məlumatları</h3>
+  <h3 onclick="toggleSection('contactSection')">Əlaqə məlumatları (Klikləyin)</h3>
   <hr>
-  <p>E-mail: quliyevorxan@gmail.com</p>
-  <p>Telefon nömrəsi: (+994) 99-999-99-99</p>
-  <p>GitHub: <a href="https://github.com/VQAiX" target="_blank" rel="noopener">My GitHub Account</a></p>
+  <div id="contactSection" class="hidden">
+    <p>E-mail: quliyevorxan@gmail.com</p>
+    <p>Telefon nömrəsi: (+994) 99-999-99-99</p>
+    <p>GitHub: <a href="https://github.com/VQAiX" target="_blank" rel="noopener">VQAiX</a></p>
+
+    <!-- Yeni əlaqə məlumatı əlavə etmək üçün input -->
+    <input type="text" id="contactInput" placeholder="Yeni əlaqə məlumatı əlavə et">
+    <button onclick="addContact()">Əlavə et</button>
+
+    <div id="contactList"></div>
+  </div>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
